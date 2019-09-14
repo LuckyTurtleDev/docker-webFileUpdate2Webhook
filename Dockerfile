@@ -10,8 +10,8 @@ RUN apt-get update \
 
 RUN useradd -m -u 1000 user
 
-COPY docker/executeList.sh /home/user/executeList.sh
-COPY webFileUpdate2Webhook.sh /home/user/webFileUpdate2Webhook.sh
+COPY executeList.sh /home/user/executeList.sh
+ADD https://raw.githubusercontent.com/Lukas1818/webFileUpdate2Webhook/master/webFileUpdate2Webhook.sh /home/user/webFileUpdate2Webhook.sh
 RUN chmod u+x /home/user/webFileUpdate2Webhook.sh /home/user/executeList.sh \
  && chown 1000:1000 /home/user/webFileUpdate2Webhook.sh /home/user/executeList.sh
 
