@@ -7,7 +7,10 @@ while true
 	filename="list.txt"
 	while IFS= read -r line
 	do
-	 	/bin/bash -c "./webFileUpdate2Webhook.sh $line"
+		if [ -n "$line" ]
+		then
+			/bin/bash -c "./webFileUpdate2Webhook.sh $line"
+		fi
 	done < "$filename"
 	sleep "$INTERVAL"s
 done
