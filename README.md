@@ -21,7 +21,7 @@ a line is structured in the following way:
 ```
 version: '3.3'
 services:
-    avorion-docker:
+    webfileupdate2webhook:
         image: lukas1818/webfileupdate2webhook
         environment:
           - INTERVAL=1800
